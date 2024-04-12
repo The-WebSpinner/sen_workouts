@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Check -Checkbox Using prop</title>
+    <script src="./assets/js/jquery.min.js"></script>
+    <link href="./assets/css/style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <div class="container-sm bg-dark mt-3">
+        <h3 class="text-center text-light pt-3">Progress bar</h3>
+        <div class="container text-center pb-5">
+            <div class="row mt-3 mt-3">
+                <div class="col-sm">
+                    <button type="button" class="btn btn-danger btn-md" id="button_minus">-</button>
+                </div>
+                <div class="col-sm">
+                    <div class="progress mt-3">
+                        <div class="progress-bar text-light" id="move" style="width: 0%">0%</div>
+                    </div>
+                </div>
+                <div class="col-sm">
+                    <button type="button" id="button_plus" class="btn btn-success btn-md"> +</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+    $("#button_plus").on('click', function () {
+
+        var width = $("#move").html().split("%")[0];
+        if (parseInt(width) != 100) {
+
+            $("#move").html(`${parseInt(width) + 10}%`);
+            $("#move").css("width", `${parseInt(width) + 10}%`);
+
+        }
+    })
+
+    $("#button_minus").on('click', function () {
+
+        var width = $("#move").html().split("%")[0];
+        if (parseInt(width) != 0) {
+
+            $("#move").html(`${parseInt(width) - 10}%`);
+            $("#move").css("width", `${parseInt(width) - 10}%`);
+        }
+    })
+
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Excercise1</title>
+	<script src="./assets/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="./assets/css/bootstrap.min.js.css">
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+	<form method="post" name="newform" class="container-fluid mt-3  margin-auto w-25 text-center text-light p-5">
+		<h3 class="text-dark">Arrays in Javascript</h3>
+		<div class="form-group">
+			<label>Enter the array values</label></br>
+			<input type="text" class="form=control text-center" name="form_1" id="arrayValue">
+		</div>
+		<div class="form-group">
+			<label>Enter the position to be replaced</label>
+			<input type="text" name="pos" class="form=control text-center" id="arrayValue">
+		</div>
+		<div class="form-group">
+			<label>Enter the value to be replaced</label>
+			<input type="text" name="replace" id="arrayValue" class="form=control text-center">
+		</div>
+		<div class="form-group">
+			<p class=" bg-dark text-light mt-3  " id="display"></p>
+			<p class=" bg-dark text-light" id="display2"></p>
+		</div>
+		<div>
+			<button type="reset" value="reset" class="btn btn-default btn btn-dark mt-3 mb-3"
+				onclick="validatereset()">Reset
+			</button>
+			<button type="button" id="click" value="submit" class="btn btn-default btn btn-dark mt-3 mb-3" name="submit"
+				onclick="validateform()">Replace
+			</button>
+		</div>
+	</form>
+</body>
+
+</html>
+<script>
+	function validateform() {
+		var form_1 = document.forms["newform"]["form_1"].value;
+		var new_word = form_1.split(',');
+		var pos = document.forms["newform"]["pos"].value;
+		var r = document.forms["newform"]["replace"].value;
+		var result = new_word.splice(pos - 1, 1, r);
+		var original_array = form_1.split(',');
+		var array_regex = /^(\d|\w+( )*)(( )*,{1}( )*((\d|\w+(.){1}\d|\w+)|([\d|\w]+))( )*)+$/;
+		var l = new_word.length;
+
+
+		if (form_1 == "") {
+			alert("Enter the array values");
+			return false;
+		} else if (!array_regex.test(form_1)) {
+			alert("Enter valid array");
+			return false;
+		} else if (pos == "") {
+			alert("Enter the position to be replaced");
+			return false;
+		} else if (pos > original_array.length || pos == "0") {
+
+			alert("Give a valid Position");
+			return false;
+		} else if (l > 5) {
+
+			alert("only five arrays are allowed");
+			return false;
+		}
+		else if (r == "") {
+			alert("Enter a value to be replaced");
+			return false;
+		} else { };
+
+		document.getElementById("display").style.display = "block";
+		document.getElementById("display2").style.display = "block";
+
+		document.getElementById("display").innerHTML = form_1;
+		document.getElementById("display2").innerHTML = new_word.toString();
+	}
+	{
+		function validatereset() {
+			document.getElementById("display").style.display = "none";
+			document.getElementById("display2").style.display = "none";
+		}
+	}
+
+</script>

@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>BootStrap Works</title>
+	<link rel="icon" type="imageicon" href="./assets/images/alien (1).png">
+	<link rel="stylesheet" href="./assets/bootstrap/style.css" />
+</head>
+
+<body class="bg-success">
+	<form>
+		<div class="row text-center">
+			<h3 class=" p-3 px-3 bg-info text-dark w-50 mx-auto text-center">Create account</h3>
+		</div>
+		<div class="container-fluid mx-auto w-50 bg-dark px-3 mb-2">
+			<div class="row mt-0 p-3  text-info rounded">
+				<div class="col-sm-6">
+					<label for="firstName" class="form-label"> FirstName:*</label><br />
+				</div>
+				<div class="col-sm-6">
+					<label for="LastName" class="form-label"> LastName:*</label><br />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<input type="text" placeholder="enter your lastname" class="form-control" />
+				</div>
+
+				<div class="col-sm-6">
+					<input type="text" placeholder="enter your lastname" class="form-control" /><br />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<label for="firstName" class="form-label text-info "> E-mail:*</label>
+				</div>
+			</div>
+
+			<div class="row mb-4">
+				<div class="col-sm-12">
+					<input type="text" placeholder="enter your email" class="form-control" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 text-left">
+					<label for="pass" class="form-label text-info ">Password:*</label><br />
+				</div>
+
+				<div class="col-sm-6">
+					<label for="LastName" class="form-label text-info "> Confirm Password:*</label><br />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<input type="text" placeholder="enter your password" class="form-control" />
+				</div>
+
+				<div class="col-sm-6">
+					<input type="text" placeholder="enter your password again" class="form-control" /><br />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 text-left">
+					<label for="gender" class="form-label text-info ">Gender:*</label><br />
+				</div>
+
+				<div class="col-sm-6">
+					<label for="hobbies" class="form-label text-info "> Hobbies:*</label><br />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6">
+					<input type="radio" id="male" name="gender" value="male" />
+					<label for="gender" class="name text-light "> Male</label>
+					<input type="radio" id="female" name="gender" value="Female" />
+					<label for="gender" class="name text-light "> Female</label>
+				</div>
+
+				<div class="col-sm-6">
+					<input type="checkbox" id="hobby1" name="hobby1" value="hobby1" />
+					<label for="Music" class="name text-light"> Music</label>
+					<input type="checkbox" id="hobby2" name="hobby2" value="hobby2" />
+					<label for="Sports" class="name text-light"> Sports</label>
+					<input type="checkbox" id="hobby3" name="hobby3" value="hobby3" />
+					<label for="Travel" class="name text-light"> Travel</label>
+					<input type="checkbox" id="hobby4" name="hobby4" value="hobby4" />
+					<label for="Movies" class="name text-light"> Movies</label>
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-sm-6 text-left">
+					<label for="gender" class="form-label text-info ">SourceOfIncome</label><br />
+				</div>
+
+				<div class="col-sm-6">
+					<label for="hobbies" class="form-label text-info ">Income</label><br />
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-sm-6">
+					<select name="S_income" id="S_income">
+						<option value="Employed">Employeed</option>
+						<option value="UnEmployed">Unemployeed</option>
+					</select>
+				</div>
+
+				<div class="col-sm-6">
+					<input type="range" min="1" max="100" value="50" class="slider" id="myRange" />
+
+					<button type="button" class="btn-info">50K</button>
+				</div>
+			</div>
+			<div class="row mt-3">
+				<div class="col-sm-6 text-left">
+					<label for="profile" class="form-label text-info ">upload your profile picture:*</label><br />
+				</div>
+
+				<div class="col-sm-6">
+					<label for="age" class="form-label text-info "> Age</label><br />
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-sm-6">
+					<input type="file" id="myfile" class="text-light" />
+				</div>
+
+				<div class="col-sm-6">
+					<input type="text" placeholder="18" class="form-control" />
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-sm-6 text-left text-info ">
+					<label for="bio" class="names"> Bio</label>
+				</div>
+			</div>
+			<div class="row">
+				<textarea id="bio" name="bioname"></textarea>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 mx-auto text-center mt-3 mb-3 ">
+					<input type="submit" value="submit" name="submit" class="btn-success">
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+
+</html>

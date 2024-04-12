@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Click Event</title>
+	<script src="./assets/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+	<div class="container mt-3 margin-auto w-25 bg-success text-center text-dark mx-auto p-4 rounded" id="click">
+		<h2 id="display">Click here</h2>
+		<script>
+			$("#click").mousedown(function (event) {
+				switch (event.which) {
+					case 1:
+						$("#display").text("Left Click");
+						break;
+					case 2:
+						$("#display").text("Middle Click");
+						break;
+					case 3:
+						$("#display").text("Right click");
+						break;
+				}
+				return false;
+			});
+		</script>
+</body>
+
+</html>

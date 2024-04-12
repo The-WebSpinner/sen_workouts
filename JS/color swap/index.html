@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Color Swap Task</title>
+    <script src="./assets/js/jquery.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <input type="hidden" name="hidden" id="hidden" data-color="" data-id="" />
+    <div class="mx-auto text-center box ">
+        <div id="square1" class="div border border-dark">
+            <div id="square2" class="div border border-dark">
+                <div id="square3" class="div border border-dark">
+                    <div id="square4" class="div border border-dark"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(".div").click(function (e) {
+        e.stopPropagation();
+
+        if ($("#hidden").attr("data-id") != "") {
+            $(`#${$("#hidden").attr("data-id")}`).css(
+                "background-color",
+                $(this).css("background-color")
+            );
+            $(this).css("background-color", $("#hidden").attr("data-color"));
+            $("#hidden").attr("data-color", "");
+            $("#hidden").attr("data-id", "");
+        } else {
+            $("#hidden").attr("data-color", $(this).css("background-color"));
+            $("#hidden").attr("data-id", $(this).attr("id"));
+        }
+    });
+</script>
+
+</html>

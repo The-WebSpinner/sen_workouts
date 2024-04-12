@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Age Calculator</title>
+	<script src="./assets/js/jquery.min.js"></script>
+	<link rel="stylesheet" href="./assets/css/style.css">
+	<link rel="icon" href="./assets/images/age.png">
+</head>
+
+<body>
+	<div class="container mt-3 margin-auto w-25 bg-dark text-center text-light mx-auto p-4 rounded">
+		<h3 class="text-warning">AGE CALCULATOR</h3>
+		<div class="row">
+			<label class=" mb-2" id="headlabel">Enter Your Bithdate</label>
+			<input type="date" class="datepick mt-2" id="datePicker" name="age_calc">
+			<button type="button" class="Submit mt-3 w-25 p-2 btn btn-info mx-auto "
+				onclick="validatecalc()">CALCULATE</button>
+			<H4 class="display mt-5" id="display"></H4>
+			<H5 class="display mt-1" id="display2"></H5>
+		</div>
+	</div>
+</body>
+<script>
+
+	datePicker.max = new Date().toISOString().split('T')[0];
+	datePicker.focus()
+	function validatecalc() {
+		document.getElementById("headlabel").style.display = 'none';
+		var Bdate = new Date(datePicker.value)
+		var today = new Date();
+		if (Bdate == null || Bdate == "" || Bdate == "Invalid Date") {
+			document.getElementById("display").style.color = "Tomato";
+			document.getElementById("display").innerHTML = "Kindly ! Give your Birth Date"
+			return false;
+		} else {
+			if (today.getMonth() > Bdate.getMonth() ||
+				(today.getMonth() == Bdate.getMonth() &&
+
+					today.getDate() >= Bdate.getDate())) {
+				years = today.getFullYear() - Bdate.getFullYear();
+			} else {
+
+				years = today.getFullYear() - Bdate.getFullYear() - 1;
+			}
+		}
+		var months;
+		if (today.getDate() >= Bdate.getDate()) {
+			months = today.getMonth() - Bdate.getMonth();
+		} else if (today.getDate() < Bdate.getDate()) {
+			months = today.getMonth() - Bdate.getMonth() - 1;
+		}
+		months = months < 0 ? months + 12 : months;
+		var days;
+		var monthDays = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+		if (today.getDate() >= Bdate.getDate()) {
+			days = today.getDate() - Bdate.getDate();
+		} else {
+			days = today.getDate() - Bdate.getDate() + monthDays[Bdate.getMonth()];
+		}
+		document.getElementById("display").style.color = "MediumSeaGreen";
+		document.getElementById("display").innerHTML = (`You were born on ${Bdate.toDateString()}<br><br>You are ${years} years, ${months} months and ${days} days old.`);
+
+		if (months == 0 && days == 0) {
+			document.getElementById("display2").innerHTML = ("Wishing you a Happy Birthday 🎂🎈")
+		} else {
+
+			document.getElementById("display2").innerHTML = ("")
+		};
+
+	};
+
+</script>
+
+</html>

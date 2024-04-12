@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Check -Checkbox Using prop</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css.css">
+</head>
+
+<body>
+    <div class="container mt-3 margin-auto w-25  bg-dark text-center text-light mx-auto p-5 rounded">
+        <h3 class="head text-warning text-center mb-3">Handling Checkboxes</h3>
+        <div>
+            <input class="form-check-input btn btn-primary btn-md " type="checkbox" id="checkVal1">
+            <label class="form-check-label">Check Box 1</label>
+        </div>
+        <div>
+            <input class="form-check-input btn btn-primary btn-md" type="checkbox" id="checkVal2">
+            <label class="form-check-label">Check Box 2</label>
+        </div>
+        <div>
+            <input class="form-check-input btn btn-primary btn-md" type="checkbox" id="checkVal3">
+            <label class="form-check-label">Check Box 3</label>
+        </div>
+        <div>
+            <input class="form-check-input btn btn-primary btn-md" type="checkbox" id="checkVal4">
+            <label class="form-check-label">Check Box 4</label>
+        </div>
+        <div>
+            <input class="form-check-input btn btn-primary btn-md" type="checkbox" id="checkVal5">
+            <label class="form-check-label">Check Box 5</label>
+        </div>
+
+        <div class="form-check p-2 ">
+            <button type="button" class="btn_check mt-3 btn-success ">Check All</button>
+            <button type="button" class="btn_uncheck mt-3 btn-success">Uncheck all</button>
+            <button type="button" class="btn_toggle mt-3 btn-success">Toggle</button>
+        </div>
+</body>
+
+
+<script>
+
+    $('.btn_check').click(function () {
+        $('input[type="checkbox"]').prop("checked", true);
+    })
+    $(".btn_uncheck").click(function () {
+        $('input[type="checkbox"]').prop("checked", false);
+    });
+
+    $(".btn_toggle").click(function () {
+        var check1 = $('input[type="checkbox"]:checked');
+        var unchecked = $('input[type="checkbox"]').not(':checked');
+        check1.prop("checked", false);
+        unchecked.prop("checked", true);
+
+    });
+</script>
+
+</html>

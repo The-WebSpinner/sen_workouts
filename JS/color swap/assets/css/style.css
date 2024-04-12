@@ -1,0 +1,23 @@
+#square1 {
+    padding: 10%;
+    background-color: rgb(0, 255, 76);
+}
+
+#square2 {
+    padding: 20%;
+    background-color: rgb(255, 0, 251);
+}
+
+#square3 {
+    padding: 30%;
+    background-color: rgb(81, 0, 255);
+}
+
+#square4 {
+    padding: 40%;
+    background-color: rgb(211, 255, 50);
+}
+
+.box {
+    width: 40%
+}
